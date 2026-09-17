@@ -1,2 +1,2 @@
 # Projeto_Site_Turma
-Primeiro Site feito pela turma Desenvolvimento de sistema do Cedupp turma 202 - 2026
+Primeiro Site feito pela turma Desenvolvimento de Sistema do Cedup turma 202 - 2026
