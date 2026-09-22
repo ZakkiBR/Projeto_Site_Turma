@@ -1,67 +1,179 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turma - DES 202</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DES202 — Desenvolvimento de Sistemas</title>
+
+  <!-- Google Fonts: Poppins + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Turma - DES 202</h1>
-        <nav>
-            <img src="/Imagens/logotransparente.png" alt="Logo da Turma">
-            <a href="#sobre">Sobre nós -</a>
-            <a href="#fotos">Fotos -</a>
-            <a href="#calendario">Calendario letivo -</a>
-            <a href="#links">Links -</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
 
-    <main>
-        <section id="sobre">
-            <div>
-                <h2>Turma - DES 202</h2>
-                <p>Somos uma turma que estamos estudando Desenvolvimento de sistema,
-                    esse será nosso primeiro site em grupo, dando funções para da membro
-                    para conseguimos monta esse site do <b>zero</b>
-                </p>
-            </div>
-        </section>
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <span class="logo-icon">&lt;/&gt;</span>
+        <span class="logo-text">DES202</span>
+      </a>
 
-        <section id="fotos">
-            <div>
-                <h2>Fotos da Turma</h2>
-                <p>Confira algumas fotos da nossa turma!</p>
-                <img src="fotos/turma.jpg" alt="Fotos da Turma">
-                <img src="fotos/turma2.jpg" alt="Fotos da Turma">
-            </div>
-        </section>
+      <nav class="nav">
+        <a href="#galeria">Galeria</a>
+        <a href="#alunos">Alunos</a>
+        <a href="#calendario">Calendário</a>
+        <a href="#mural">Mural</a>
+        <a href="#links">Links</a>
+      </nav>
+    </div>
+  </header>
 
-        <section id="calendario">
-            <div>
-                <h2>Calendario letivo</h2>
-                <p>Confira o calendario letivo da nossa turma!</p>
-                <img src="fotos/calendario.jpg" alt="Calendario Letivo">
-            </div>
-        </section>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <h1>Desenvolvimento de Sistemas</h1>
+      <p class="lema">Código, café e criatividade — a turma que constrói o futuro.</p>
+      <a href="#alunos" class="btn">Conheça a turma</a>
+    </div>
+  </section>
 
-        <section id="links">
-            <div>
-                <h2>Links</h2>
-                <p>Confira alguns links uteis para nossa turma!</p>
-                <ul>
-                    <li><a href="https://www.ceduphh.com.br/horarios/">Horários</a></li>
-                    <li><a href="https://chat.whatsapp.com/EymPI2hBjDTAvykAsMkNgf?s=cl&p=a&mlu=4&ilr=4/">WhatsApp da Turma</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100057460539315&locale=pt_BR/">Facebook</a></li>
-                    <li><a href="https://www.ceduphh.com.br/">Site da Escola</a></li>
-                </ul>
-            </div>
-        </section>
-    </main>
+  <!-- ============ GALERIA ============ -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2 class="section-title">Galeria</h2>
+      <p class="section-sub">Momentos da nossa turma</p>
 
-    <footer id="contato">
-        <p>&copy; 2026/2  Turma - DES 202. Todos os direitos reservados.</p>
-    </footer>
+      <div class="galeria">
+        <div class="foto">Foto 1</div>
+        <div class="foto">Foto 2</div>
+        <div class="foto">Foto 3</div>
+        <div class="foto">Foto 4</div>
+        <div class="foto">Foto 5</div>
+        <div class="foto">Foto 6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALUNOS ============ -->
+  <section id="alunos" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Alunos</h2>
+      <p class="section-sub">Quem faz a DES202 acontecer</p>
+
+      <div class="alunos">
+        <div class="aluno-card">
+          <div class="aluno-foto">👤</div>
+          <h3>Aluno 1</h3>
+          <p>Mini-bio do aluno aqui.</p>
+        </div>
+        <div class="aluno-card">
+          <div class="aluno-foto">👤</div>
+          <h3>Aluno 2</h3>
+          <p>Mini-bio do aluno aqui.</p>
+        </div>
+        <div class="aluno-card">
+          <div class="aluno-foto">👤</div>
+          <h3>Aluno 3</h3>
+          <p>Mini-bio do aluno aqui.</p>
+        </div>
+        <div class="aluno-card">
+          <div class="aluno-foto">👤</div>
+          <h3>Aluno 4</h3>
+          <p>Mini-bio do aluno aqui.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALENDÁRIO ============ -->
+  <section id="calendario" class="section">
+    <div class="container">
+      <h2 class="section-title">Calendário</h2>
+      <p class="section-sub">Próximas provas e trabalhos</p>
+
+      <ul class="calendario">
+        <li>
+          <span class="data">10/10</span>
+          <span class="evento">Prova de HTML e CSS</span>
+          <span class="tag tag-prova">Prova</span>
+        </li>
+        <li>
+          <span class="data">18/10</span>
+          <span class="evento">Entrega do projeto final</span>
+          <span class="tag tag-trabalho">Trabalho</span>
+        </li>
+        <li>
+          <span class="data">25/10</span>
+          <span class="evento">Apresentação dos sites</span>
+          <span class="tag tag-evento">Evento</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ MURAL ============ -->
+  <section id="mural" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Mural de Recados</h2>
+      <p class="section-sub">Deixe sua mensagem pra turma</p>
+
+      <form class="mural-form">
+        <input type="text" placeholder="Seu nome" required />
+        <textarea placeholder="Seu recado..." required></textarea>
+        <button type="submit" class="btn">Enviar recado</button>
+      </form>
+
+      <div class="mural-lista">
+        <div class="recado">
+          <strong>Ana</strong>
+          <p>Bora arrasar nesse projeto! 🚀</p>
+        </div>
+        <div class="recado">
+          <strong>Lucas</strong>
+          <p>Galera, não esqueçam a prova de sexta!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LINKS ============ -->
+  <section id="links" class="section">
+    <div class="container">
+      <h2 class="section-title">Links Úteis</h2>
+      <p class="section-sub">Tudo que a turma precisa em um só lugar</p>
+
+      <div class="links-grid">
+        <a href="#" class="link-card">
+          <span class="link-icon">💬</span>
+          <span>Grupo no WhatsApp</span>
+        </a>
+        <a href="#" class="link-card">
+          <span class="link-icon">📁</span>
+          <span>Drive da Turma</span>
+        </a>
+        <a href="#" class="link-card">
+          <span class="link-icon">📅</span>
+          <span>Calendário Escolar</span>
+        </a>
+        <a href="#" class="link-card">
+          <span class="link-icon">📚</span>
+          <span>Materiais de Estudo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>DES202</strong> — Desenvolvimento de Sistemas</p>
+      <p class="footer-small">Feito com 💙 pela turma • 2026</p>
+    </div>
+  </footer>
+
 </body>
 </html>
