@@ -26,3 +26,5 @@ function navImg(x) {
         });
     }
 //FIM DO CARROUSEL DE IMAGENS
+
+//pesquisar modo escuro/claro, enviar e guardar recado, enviar e guardar coisas na nuvem?
