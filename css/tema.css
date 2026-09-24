@@ -9,7 +9,7 @@
   /* --- Cores de marca (não mudam entre temas) --- */
   --azul-principal: #1D84B5;
   --azul-escuro:    #176087;
-  --vermelho:       #A50D15;
+  --vermelho:       #E03131;
 
   /* --- Cores funcionais (MUDAM com o tema) --- */
   --bg:             #EDF2F4;   /* fundo geral da página */
@@ -27,19 +27,23 @@
 }
 
 /* ============ TEMA ESCURO ============ */
+/* ============ TEMA ESCURO ============ */
 [data-theme="escuro"] {
-  /* --- Cores de marca (versões mais claras para contraste) --- */
-  --azul-principal: #4dabf7;
-  --azul-escuro:    #2c7fb8;
-  --vermelho:       #e03131;
+  /* Marca — versões ajustadas para contraste no escuro */
+  --azul-principal: #7c9cff;   /* mantém, funciona bem */
+  --azul-escuro:    #4a6cf7;   /* mantém */
+  --acento:         #2DD4BF;   /* mantém, brilha no escuro */
 
-  /* --- Cores funcionais --- */
-  --bg:             #121212;
-  --bg-alt:         #1a1a1a;
-  --texto:          #eaeaea;
-  --texto-suave:    #a0a0a0;
-  --card:           #1e1e1e;
-  --borda:          #2a2a2a;
-  --input-bg:       #1e1e1e;
-  --input-borda:    #333333;
+  --acento-escuro:  #14b8a6;
+  --acento-claro:   #5eead4;
+
+  /* Funcionais */
+  --bg:             #0a0a12;
+  --bg-alt:         #12121f;
+  --texto:          #e8e8f0;
+  --texto-suave:    #9a9aad;
+  --card:           #18182a;
+  --borda:          #2a2a42;
+  --input-bg:       #0a0a12;
+  --input-borda:    #3a3a55;
 }
