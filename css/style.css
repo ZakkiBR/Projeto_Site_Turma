@@ -1,14 +1,7 @@
-/* ============ VARIÁVEIS ============ */
-:root {
-  --azul-principal: #1D84B5;   /* Ocean Blue */
-  --azul-escuro:    #176087;   /* Baltic Blue */
-  --vermelho:       #A50D15;   /* Mahogany Red */
-  --preto:          #0A0908;   /* Black */
-  --branco:         #EDF2F4;   /* Platinum */
-
-  --fonte-titulo: 'Poppins', sans-serif;
-  --fonte-texto:  'Inter', sans-serif;
-}
+/* ============================================================
+   STYLE — reset, layout, componentes, responsivo
+   Usa sempre var() — nunca cor fixa
+   ============================================================ */
 
 /* ============ RESET ============ */
 * {
@@ -25,8 +18,9 @@ body {
   font-family: var(--fonte-texto);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--preto);
-  background: var(--branco);
+  color: var(--texto);
+  background: var(--bg);
+  transition: background .3s, color .3s;
 }
 
 a {
@@ -51,7 +45,7 @@ img {
 }
 
 .section-alt {
-  background: #ffffff;
+  background: var(--bg-alt);
 }
 
 .section-title {
@@ -63,14 +57,41 @@ img {
 }
 
 .section-sub {
-  color: #555;
+  color: var(--texto-suave);
   margin-bottom: 40px;
+}
+
+/* ============ BOTÃO DE TEMA ============ */
+#btn-tema {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--borda);
+  background: var(--card);
+  color: var(--texto);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  transition: transform .15s, background .3s, border-color .3s;
+}
+
+#btn-tema:hover  { transform: scale(1.08); }
+#btn-tema:active { transform: scale(.95); }
+
+#btn-tema:focus-visible {
+  outline: 3px solid var(--azul-principal);
+  outline-offset: 2px;
 }
 
 /* ============ HEADER ============ */
 .header {
   background: var(--azul-escuro);
-  color: var(--branco);
+  color: #EDF2F4;
   padding: 18px 0;
   position: sticky;
   top: 0;
@@ -119,7 +140,7 @@ img {
 /* ============ HERO ============ */
 .hero {
   background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-principal) 100%);
-  color: var(--branco);
+  color: #EDF2F4;
   text-align: center;
   padding: 100px 0;
 }
@@ -137,11 +158,11 @@ img {
   margin-bottom: 32px;
 }
 
-/* ============ BOTÃO ============ */
+/* ============ BOTÃO PADRÃO ============ */
 .btn {
   display: inline-block;
   background: var(--vermelho);
-  color: var(--branco);
+  color: #EDF2F4;
   font-family: var(--fonte-titulo);
   font-weight: 600;
   font-size: 16px;
@@ -167,7 +188,7 @@ img {
 .foto {
   aspect-ratio: 1 / 1;
   background: var(--azul-principal);
-  color: var(--branco);
+  color: #EDF2F4;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -190,12 +211,12 @@ img {
 }
 
 .aluno-card {
-  background: var(--branco);
-  border: 1px solid #dde3e6;
+  background: var(--card);
+  border: 1px solid var(--borda);
   border-radius: 12px;
   padding: 24px;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background .3s, border-color .3s;
 }
 
 .aluno-card:hover {
@@ -208,7 +229,7 @@ img {
   height: 72px;
   margin: 0 auto 12px;
   background: var(--azul-principal);
-  color: var(--branco);
+  color: #EDF2F4;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -225,7 +246,7 @@ img {
 
 .aluno-card p {
   font-size: 14px;
-  color: #666;
+  color: var(--texto-suave);
 }
 
 /* ============ CALENDÁRIO ============ */
@@ -240,11 +261,12 @@ img {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--branco);
+  background: var(--card);
   border-left: 4px solid var(--azul-principal);
   padding: 16px 20px;
   border-radius: 8px;
   flex-wrap: wrap;
+  transition: background .3s;
 }
 
 .data {
@@ -266,11 +288,12 @@ img {
   border-radius: 999px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  color: #EDF2F4;
 }
 
-.tag-prova    { background: var(--vermelho); color: var(--branco); }
-.tag-trabalho { background: var(--azul-principal); color: var(--branco); }
-.tag-evento   { background: var(--azul-escuro); color: var(--branco); }
+.tag-prova    { background: var(--vermelho); }
+.tag-trabalho { background: var(--azul-principal); }
+.tag-evento   { background: var(--azul-escuro); }
 
 /* ============ MURAL ============ */
 .mural-form {
@@ -286,10 +309,11 @@ img {
   font-family: var(--fonte-texto);
   font-size: 15px;
   padding: 12px 16px;
-  border: 1px solid #ccd4d8;
+  border: 1px solid var(--input-borda);
   border-radius: 8px;
-  background: var(--branco);
-  color: var(--preto);
+  background: var(--input-bg);
+  color: var(--texto);
+  transition: background .3s, border-color .3s, color .3s;
 }
 
 .mural-form input:focus,
@@ -314,10 +338,11 @@ img {
 }
 
 .recado {
-  background: var(--branco);
+  background: var(--card);
   border-left: 4px solid var(--vermelho);
   padding: 16px 20px;
   border-radius: 8px;
+  transition: background .3s;
 }
 
 .recado strong {
@@ -327,7 +352,7 @@ img {
 
 .recado p {
   margin-top: 4px;
-  color: #444;
+  color: var(--texto-suave);
 }
 
 /* ============ LINKS ============ */
@@ -341,12 +366,12 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--branco);
-  border: 1px solid #dde3e6;
+  background: var(--card);
+  border: 1px solid var(--borda);
   border-radius: 12px;
   padding: 20px;
   font-weight: 500;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s, background .3s;
 }
 
 .link-card:hover {
@@ -362,7 +387,7 @@ img {
 /* ============ FOOTER ============ */
 .footer {
   background: var(--azul-escuro);
-  color: var(--branco);
+  color: #EDF2F4;
   text-align: center;
   padding: 32px 0;
 }

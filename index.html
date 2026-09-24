@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="claro">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+   <script>
+    (function () {
+      const salvo = localStorage.getItem('tema');
+      const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const tema = salvo || (prefereEscuro ? 'escuro' : 'claro');
+      document.documentElement.setAttribute('data-theme', tema);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tema.css" />
 </head>
 <body>
+   <button id="btn-tema" aria-label="Alternar tema" aria-pressed="false">
+    🌙
+  </button>
 
   <!-- ============ HEADER ============ -->
   <header class="header">
@@ -175,7 +188,8 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="mural.js"></script> 
+  <script src="js/script.js"></script>
+  <script src="js/mural.js"></script> 
+  <script src="js/tema.js"></script>
 </body>
 </html>

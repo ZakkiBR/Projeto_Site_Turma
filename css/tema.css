@@ -1,0 +1,45 @@
+/* ============================================================
+   TEMA — variáveis de cor e tipografia
+   Trocar de tema = só redefinir os valores abaixo
+   ============================================================ */
+
+/* ============ TEMA CLARO (padrão) ============ */
+:root,
+[data-theme="claro"] {
+  /* --- Cores de marca (não mudam entre temas) --- */
+  --azul-principal: #1D84B5;
+  --azul-escuro:    #176087;
+  --vermelho:       #A50D15;
+
+  /* --- Cores funcionais (MUDAM com o tema) --- */
+  --bg:             #EDF2F4;   /* fundo geral da página */
+  --bg-alt:         #ffffff;   /* fundo de seções alternadas */
+  --texto:          #0A0908;   /* texto principal */
+  --texto-suave:    #555555;   /* texto secundário */
+  --card:           #ffffff;   /* fundo de cards */
+  --borda:          #dde3e6;   /* bordas */
+  --input-bg:       #EDF2F4;   /* fundo de inputs */
+  --input-borda:    #ccd4d8;   /* borda de inputs */
+
+  /* --- Tipografia --- */
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-texto:  'Inter', sans-serif;
+}
+
+/* ============ TEMA ESCURO ============ */
+[data-theme="escuro"] {
+  /* --- Cores de marca (versões mais claras para contraste) --- */
+  --azul-principal: #4dabf7;
+  --azul-escuro:    #2c7fb8;
+  --vermelho:       #e03131;
+
+  /* --- Cores funcionais --- */
+  --bg:             #121212;
+  --bg-alt:         #1a1a1a;
+  --texto:          #eaeaea;
+  --texto-suave:    #a0a0a0;
+  --card:           #1e1e1e;
+  --borda:          #2a2a2a;
+  --input-bg:       #1e1e1e;
+  --input-borda:    #333333;
+}
