@@ -121,13 +121,13 @@
       <h2 class="section-title">Mural de Recados</h2>
       <p class="section-sub">Deixe sua mensagem pra turma</p>
 
-      <form class="mural-form">
-        <input type="text" placeholder="Seu nome" required />
-        <textarea placeholder="Seu recado..." required></textarea>
+      <form class="mural-form" id="form-recado">
+        <input type="text" id="nome-recado" placeholder="Seu nome" required />
+        <textarea id="texto-recado" placeholder="Seu recado..." required></textarea>
         <button type="submit" class="btn">Enviar recado</button>
       </form>
 
-      <div class="mural-lista">
+      <div class="mural-lista" id="mural-lista">
         <div class="recado">
           <strong>Ana</strong>
           <p>Bora arrasar nesse projeto! 🚀</p>
@@ -175,5 +175,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
+  <script src="mural.js"></script> 
 </body>
 </html>

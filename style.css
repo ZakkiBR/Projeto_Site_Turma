@@ -188,6 +188,16 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
+
+.aluno-card {
+  background: var(--branco);
+  border: 1px solid #dde3e6;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
 .aluno-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(23, 96, 135, 0.15);
