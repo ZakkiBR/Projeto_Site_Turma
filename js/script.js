@@ -1,29 +1,69 @@
-//INICIO DO CARROUSEL DE IMAGENS
+// ============ CARROSSEL DA GALERIA ============
+let indiceAtual = 0;
+const slides = document.querySelectorAll('.carrossel-item');
+const btnAnterior = document.getElementById('btn-anterior');
+const btnProximo = document.getElementById('btn-proximo');
+const indicador = document.getElementById('carrossel-indicador');
 
-    //cria variavel index e cria variavel de referencia para os botões de imagem.
-let index = 0;
-const img_btn=document.getElementById('###botao de imagem');
-const img=document.getElementsByClassName('###imagem');
+// Função para atualizar qual slide está visível
+function mostrarSlide(index) {
+  // Trata limites para criar o loop infinito
+  if (index >= slides.length) {
+    indiceAtual = 0;
+  } else if (index < 0) {
+    indiceAtual = slides.length - 1;
+  } else {
+    indiceAtual = index;
+  }
+
+  // Oculta todos e ativa apenas o slide atual
+  slides.forEach((slide) => slide.classList.remove('ativo'));
+  slides[indiceAtual].classList.add('ativo');
+
+  // Atualiza o texto do indicador
+  if (indicador) {
+    indicador.textContent = `Foto ${indiceAtual + 1} de ${slides.length}`;
+  }
+}
+
+// Eventos dos botões de avançar e voltar
+btnProximo?.addEventListener('click', () => mostrarSlide(indiceAtual + 1));
+btnAnterior?.addEventListener('click', () => mostrarSlide(indiceAtual - 1));
 
 
-    //função para mudar a imagem que esta sendo mostrada, se passar do limite de imagens vai para o inicio ou fim
-function showImage(index) {
-    if (index >= img.length) {
-        index = 0;
-    }
-    if (index < 0) {
-        index = img.length - 1;
-    }
-    img[index].classList.add("###imagem ativa");
-    }
+// ============ AMPLIAÇÃO (MODAL / LIGHTBOX) ============
+const moldura = document.getElementById('carrossel-moldura');
+const modal = document.getElementById('modal-galeria');
+const modalConteudo = document.getElementById('modal-conteudo');
+const modalFechar = document.getElementById('modal-fechar');
 
-    //função para calcular index com o botão de imagem clicado, num botão de imagem para frente, utilize o valor 1 na função, num botão de imagem para trásutilize o valor de -1 na função
-function navImg(x) {
-    img_btn.addEventListener("click", function() {
-        img.classList.remove("###imagem ativa");
-        index += (x);
-        showImage(index);
-        });
-    }
-//FIM DO CARROUSEL DE IMAGENS
+// Ao clicar na imagem/moldura, abre o modal com o conteúdo da imagem ativa
+moldura?.addEventListener('click', () => {
+  const itemAtivo = slides[indiceAtual].innerHTML;
+  modalConteudo.innerHTML = itemAtivo;
+  modal.classList.add('aberto');
+});
+
+// Fechar ao clicar no "X"
+modalFechar?.addEventListener('click', () => {
+  modal.classList.remove('aberto');
+});
+
+// Fechar se clicar na área escura fora da foto
+modal?.addEventListener('click', (evento) => {
+  if (evento.target === modal) {
+    modal.classList.remove('aberto');
+  }
+});
+
+// Fechar com a tecla 'ESC' ou navegar com as setas do teclado
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('aberto')) {
+    modal.classList.remove('aberto');
+  } else if (e.key === 'ArrowRight' && !modal.classList.contains('aberto')) {
+    mostrarSlide(indiceAtual + 1);
+  } else if (e.key === 'ArrowLeft' && !modal.classList.contains('aberto')) {
+    mostrarSlide(indiceAtual - 1);
+  }
+});
 

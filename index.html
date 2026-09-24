@@ -54,23 +54,54 @@
     </div>
   </section>
 
-  <!-- ============ GALERIA ============ -->
+<!-- ============ GALERIA ============ -->
   <section id="galeria" class="section">
     <div class="container">
       <h2 class="section-title">Galeria</h2>
       <p class="section-sub">Momentos da nossa turma</p>
 
-      <div class="galeria">
-        <div class="foto">Foto 1</div>
-        <div class="foto">Foto 2</div>
-        <div class="foto">Foto 3</div>
-        <div class="foto">Foto 4</div>
-        <div class="foto">Foto 5</div>
-        <div class="foto">Foto 6</div>
+      <!-- Contêiner do Carrossel -->
+      <div class="carrossel-container">
+        <!-- Botão Esquerdo -->
+        <button class="carrossel-btn btn-prev" id="btn-anterior" aria-label="Imagem anterior">&#10094;</button>
+
+        <!-- Moldura da imagem central -->
+        <div class="carrossel-moldura" id="carrossel-moldura" title="Clique para ampliar">
+          <!-- Você pode usar tanto <img> quanto <div> com texto provisório -->
+          <div class="carrossel-item ativo">
+            <div class="foto">Foto 1</div>
+          </div>
+          <div class="carrossel-item">
+            <div class="foto">Foto 2</div>
+          </div>
+          <div class="carrossel-item">
+            <div class="foto">Foto 3</div>
+          </div>
+          <div class="carrossel-item">
+            <div class="foto">Foto 4</div>
+          </div>
+          <div class="carrossel-item">
+            <div class="foto">Foto 5</div>
+          </div>
+          <div class="carrossel-item">
+            <div class="foto">Foto 6</div>
+          </div>
+        </div>
+
+        <!-- Botão Direito -->
+        <button class="carrossel-btn btn-next" id="btn-proximo" aria-label="Próxima imagem">&#10095;</button>
       </div>
+
+      <!-- Indicador de página/foto -->
+      <div class="carrossel-indicador" id="carrossel-indicador">Foto 1 de 6</div>
     </div>
   </section>
 
+  <!-- ============ MODAL PARA AMPLIAR IMAGEM ============ -->
+  <div id="modal-galeria" class="modal">
+    <span class="modal-fechar" id="modal-fechar">&times;</span>
+    <div class="modal-conteudo" id="modal-conteudo"></div>
+  </div>
   <!-- ============ ALUNOS ============ -->
   <section id="alunos" class="section section-alt">
     <div class="container">
