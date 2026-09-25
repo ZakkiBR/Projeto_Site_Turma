@@ -342,6 +342,12 @@ img {
   gap: 20px;
 }
 
+.aluno-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(23, 96, 135, 0.15);
+}
+
+
 .aluno-card {
   background: var(--card);
   border: 1px solid var(--borda);
@@ -351,22 +357,17 @@ img {
   transition: transform 0.2s, box-shadow 0.2s, background .3s, border-color .3s;
 }
 
-.aluno-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(23, 96, 135, 0.15);
-}
-
+/* ⬇️ ESSA É A PARTE QUE FAZ A MÁGICA ⬇️ */
 .aluno-foto {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 12px;
-  background: var(--azul-principal);
-  color: #EDF2F4;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
+  width: 96px;                  /* tamanho fixo do círculo */
+  height: 96px;                 /* MESMO valor — obrigatório para círculo perfeito */
+  border-radius: 50%;           /* vira redondo */
+  object-fit: cover;            /* corta a imagem sem esticar */
+  object-position: center;      /* foca no centro (rosto) */
+  display: block;               /* remove o espaço extra que <img> tem embaixo */
+  margin: 0 auto 16px;          /* centraliza + espaço abaixo */
+  border: 3px solid var(--azul-principal);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
 }
 
 .aluno-card h3 {
