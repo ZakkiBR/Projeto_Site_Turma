@@ -134,30 +134,28 @@
   </section>
 
   <!-- ============ CALENDÁRIO ============ -->
-  <section id="calendario" class="section">
-    <div class="container">
-      <h2 class="section-title">Calendário</h2>
-      <p class="section-sub">Próximas provas e trabalhos</p>
+<!-- ============ CALENDÁRIO ============ -->
+<section id="calendario" class="section">
+  <div class="container">
+    <h2 class="section-title">Calendário</h2>
+    <p class="section-sub">Próximas provas e trabalhos</p>
 
-      <ul class="calendario">
-        <li>
-          <span class="data">10/10</span>
-          <span class="evento">Prova de HTML e CSS</span>
-          <span class="tag tag-prova">Prova</span>
-        </li>
-        <li>
-          <span class="data">18/10</span>
-          <span class="evento">Entrega do projeto final</span>
-          <span class="tag tag-trabalho">Trabalho</span>
-        </li>
-        <li>
-          <span class="data">25/10</span>
-          <span class="evento">Apresentação dos sites</span>
-          <span class="tag tag-evento">Evento</span>
-        </li>
-      </ul>
-    </div>
-  </section>
+    <!-- Formulário pra adicionar evento -->
+    <form class="evento-form" id="form-evento">
+      <input type="text" id="nome-evento" placeholder="Nome do evento" required />
+      <input type="date" id="data-evento" required />
+      <select id="tipo-evento" required>
+        <option value="prova">Prova</option>
+        <option value="trabalho">Trabalho</option>
+        <option value="evento">Evento</option>
+      </select>
+      <button type="submit" class="btn">Adicionar</button>
+    </form>
+
+    <!-- Lista de eventos -->
+    <ul class="calendario" id="lista-eventos"></ul>
+  </div>
+</section>
 
   <!-- ============ MURAL ============ -->
   <section id="mural" class="section section-alt">
@@ -222,5 +220,6 @@
   <script src="js/script.js"></script>
   <script src="js/mural.js"></script> 
   <script src="js/tema.js"></script>
+  <script src="js/eventos.js"></script>
 </body>
 </html>
